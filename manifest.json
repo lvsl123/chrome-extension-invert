@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Reading time",
+  "name": "Invert color",
   "version": "1.0",
-  "description": "Add the reading time to Chrome Extension documentation articles",
+  "description": "invert page color, some code come from chrome",
 
   "icons": {
     "16": "images/icon.png",
