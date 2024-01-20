@@ -1,7 +1,9 @@
-// invert document without inverting images
+/* - 
+ * File: chrome-extension-invert-main/scripts/content.js 
+ */
 
-//document.body.style.backgroundColor = "black";
-//document.getElementsByTagName('body')[0].style.filter = "invert(1)";
+
+
 let contentScriptHtmlElement;
 let contentScriptImgElement;
 
@@ -10,6 +12,14 @@ for (contentScriptHtmlElement of document.getElementsByTagName("html")) {
   contentScriptHtmlElement.style.filter = "invert(1)";
 }
 
-// (contentScriptImgElement of document.getElementsByTagName("body")) {
-  //contentScriptImgElement.style.filter = "invert(1)";
-//}
+//uninvert inverted images and video
+for (let img of document.querySelectorAll("img")) {
+  img.style.filter = "invert(1)"
+}
+for (let video of document.querySelectorAll("video")) {
+  video.style.filter = "invert(1)"
+}
+
+for (let div of document.querySelectorAll("div")) {
+div.style.backgroundImage.filter = "invert(1)";
+}
