@@ -30,10 +30,12 @@
   }
 })();
 
-for (let video of document.querySelectorAll("video")) {
-  video.style.filter = "invert(1)"
-}
-
-for (let div of document.querySelectorAll("div")) {
-div.style.backgroundImage.filter = "invert(1)";
-}
+(function() {
+  for (let video of document.querySelectorAll("video")) {
+    video.style.filter = "invert(1)"
+  }
+  
+  for (let div of document.querySelectorAll("div")) {
+  div.style.backgroundImage.filter = "invert(1)";
+  }
+})();
