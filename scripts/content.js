@@ -13,6 +13,7 @@
 
   // ---- uninvert inverted images and video ----
 
+  // the selection is possibly overlap just in case
   let allItemsRaw = [...document.querySelectorAll("img"), ...document.querySelectorAll("img *")];
   let allItems = [];
   let imageCounter = 0;
@@ -21,6 +22,7 @@
 
     let position = allItemsRaw.length - 1;
     
+    // we only modify what is not repeated, and delete the rest
     let allItemsRawIncludes = allItemsRaw.includes(allItemsRaw[position]);
     let allItemsIncludes = allItems.includes(allItemsRaw[position]);
     if (allItemsRawIncludes && !allItemsIncludes) {
@@ -41,6 +43,8 @@
     img.style.filter = "invert(1)";
   }
 
+
+  ///////// note: not quite checked from this line onwards
   let allVideosRaw = [...document.querySelectorAll("video *"), ...document.querySelectorAll("video")];
   let allVideos = [];
   let videoCounter = 0;
